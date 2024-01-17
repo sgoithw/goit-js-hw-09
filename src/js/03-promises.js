@@ -1,3 +1,7 @@
+import iziToast from 'izitoast';
+
+import 'izitoast/dist/css/iziToast.min.css';
+
 const elements = {
   form: document.querySelector('.form'),
 };
@@ -39,7 +43,11 @@ function handleSubmit(event) {
  * @param {*} delay
  */
 function onResolve([position, delay]) {
-  console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+  iziToast.show({
+    position: 'topRight',
+    color: 'green',
+    message: `✅ Fulfilled promise ${position} in ${delay}ms`,
+  });
 }
 
 /**
@@ -48,7 +56,11 @@ function onResolve([position, delay]) {
  * @param {*} delay
  */
 function onReject([position, delay]) {
-  console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+  iziToast.show({
+    position: 'topRight',
+    color: 'red',
+    message: `❌ Rejected promise ${position} in ${delay}ms`,
+  });
 }
 
 /**
