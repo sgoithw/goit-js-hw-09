@@ -57,6 +57,7 @@ function resetTimer() {
  */
 function onStartBtnClick() {
   elements.startBtn.disabled = true;
+  elements.dateTimePicker.disabled = true;
   const selectedDate = new Date(elements.dateTimePicker.value);
   renderTimer(selectedDate - new Date());
 
@@ -64,6 +65,7 @@ function onStartBtnClick() {
     const time = selectedDate - new Date();
     if (time <= 0) {
       clearInterval(timer);
+      elements.dateTimePicker.disabled = false;
       return;
     }
     renderTimer(time);
