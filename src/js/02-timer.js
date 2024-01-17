@@ -27,7 +27,6 @@ elements.startBtn.addEventListener('click', onStartBtnClick);
  * Handles date change.
  *
  * @param {*} param0
- * @returns
  */
 function onDatesSelectedHandler([selectedDates]) {
   if (new Date() - selectedDates > 0) {
@@ -53,7 +52,6 @@ function resetTimer() {
 
 /**
  * Handles click on start button.
- * @returns
  */
 function onStartBtnClick() {
   elements.startBtn.disabled = true;
@@ -75,7 +73,6 @@ function onStartBtnClick() {
 /**
  * Renders timer
  * @param {integer} time
- * @returns
  */
 function renderTimer(time) {
   const { days, hours, minutes, seconds } = convertMs(time);
@@ -114,7 +111,6 @@ function convertMs(ms) {
  * Adds leading zero to the value.
  *
  * @param {integer} value
- * @returns
  */
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
